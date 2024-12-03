@@ -1,8 +1,15 @@
 name: hello-world
-on: push
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      manual_op:
+        description: 'Specify the statement to print'
+        required: false
+        default: 'Hello World'
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo "Hello World!"
+        run: echo "${{github.event.inputs.manual_op}}"
