@@ -5,7 +5,7 @@ on:
     inputs:
       manual_op:
         description: 'Specify the statement to print'
-        required: false
+        required: true
         default: 'Hello World'
 jobs:
   my-job:
